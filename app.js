@@ -43,7 +43,7 @@ app.get('/about', (req, res) => {
 });
 
 // blog routes
-app.use(blogRoutes);
+app.use('/blogs', blogRoutes);
 
 // redirects
 app.get('/about-us', (req, res) => {
