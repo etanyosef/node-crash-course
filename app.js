@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
@@ -10,7 +12,7 @@ dns.setServers(["1.1.1.1"]);
 const app = express();
 
 // connect to mongodb
-const dbURI = 'mongodb+srv://sagit:sagit123@nodetuts.ufpaznn.mongodb.net/node-tuts';
+const dbURI = process.env.MONGODB_BLOG_URI;
 mongoose.connect(dbURI)
     .then((result) => app.listen(3000))
     .catch((err) => console.log(err));
