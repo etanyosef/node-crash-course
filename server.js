@@ -2,6 +2,10 @@ const http = require('http');
 const fs = require('fs');
 const _ = require('lodash');
 
+require('dotenv').config();
+
+console.log(process.env.MONGODB_BLOG_URL);
+
 const server = http.createServer((req, res) => {
 
     // lodash
